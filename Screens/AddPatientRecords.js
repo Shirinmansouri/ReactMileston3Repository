@@ -137,6 +137,7 @@ class AddPatientRecords extends Component{
         <TextInput style={GlobalStyles.textInputStyles} onChangeText={(text)=> {this.setState({category: text});}}/>
       </View>
       <View style={{flex: 1.7, flexDirection: 'column',alignSelf: 'center'}}>
+    
           <Text style = {GlobalStyles.titleText}>Available types: </Text>
           <Text>Blood Pressure</Text>
           <Text>Respiratory Rate</Text>
