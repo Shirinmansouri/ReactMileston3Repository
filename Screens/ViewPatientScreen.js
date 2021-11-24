@@ -69,7 +69,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
           </DataTable.Cell>
           <DataTable.Cell style={{flex: 2}} numeric>
               <Button style={GlobalStyles.recordRow} title="Add" onPress={()=>{
-                    this.props.navigation.navigate('Add Patient Record', {
+                    this.props.navigation.navigate('Add Patient Record',
+                    {
                         patientId: '619dd5da60ac90f3ca548a34',
                         otherParam: 'anything you want here',
                         });
