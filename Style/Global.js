@@ -106,7 +106,7 @@ btnContainer: {
    height: 100,
  },
  textInputContainer :
- { 
+ {
    height: 20,
    alignItems: 'flex-end',
    borderColor: 'gray',
@@ -121,5 +121,25 @@ btnContainer: {
     flexDirection: "row",
     marginTop:10,
     marginBottom:0,
+  },
+  pickerItem: {
+
+    marginTop: 0,
+    paddingTop: 0,
+    marginLeft: 0,
+    backgroundColor: 'transparent',
+
+  },
+
+  picker: {
+    width:  300,
+   paddingBottom: 0,
+   paddingLeft: 0,
+   marginLeft: 0,
+   marginRight: 0,
+   transform: [{ scaleX: 0.6 }, { scaleY: 1 }],
+
+   backgroundColor: 'transparent',
+
   },
 });

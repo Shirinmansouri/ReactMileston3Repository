@@ -12,7 +12,7 @@ import DatePicker from 'react-native-neat-date-picker'
 
 
 const AddNewPatient = ({navigation, route})=>{
-  
+
   var [firstName, onChangeText] = React.useState('');
   var [lastName, onChangeText2] = React.useState('');
   var [doctor, onChangeText3] = React.useState('');
@@ -40,8 +40,8 @@ const AddNewPatient = ({navigation, route})=>{
 
 
   const addPatinet = async () => {
-	
-	
+
+
     // POST request using fetch with async/await
     const requestOptions = {
       method: 'POST',
@@ -169,7 +169,7 @@ const AddNewPatient = ({navigation, route})=>{
   onCancel={onCancel}
   onConfirm={onConfirm}
   />
-  
+
   </TouchableOpacity>
 
 

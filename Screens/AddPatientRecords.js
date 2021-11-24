@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import { StyleSheet,TextInput,View, Text, TouchableHighlight, FlatList ,Button} from 'react-native'
+import { StyleSheet,TextInput,View, Text, TouchableHighlight, FlatList ,Button,TouchableOpacity} from 'react-native'
 import {Picker} from '@react-native-picker/picker'
-import DateTimePicker from '@react-native-community/datetimepicker';
+import DatePicker from 'react-native-neat-date-picker'
 import {GlobalStyles} from '../Style/Global';
 import DropDownPicker from 'react-native-dropdown-picker';
 import { Table, Row} from 'react-native-table-component';
@@ -19,15 +19,34 @@ class AddPatientRecords extends Component{
       dateTime: '',
       nurseName: '',
       type: '',
-      category: '',
+      category: 'Heart Beat Rate',
       singleValue: '',
       date: new Date(Date.now()),
       options : ['one', 'two', 'three'],
       defaultOption : 'one',
+      showDatePicker: false,
+
     };
 
   }
+   openDatePicker =()=> {
+    this.setState({showDatePicker: true});
 
+  }
+
+
+    onCancel =()=> {
+    // You should close the modal in here
+  this.setState({showDatePicker: false})
+  }
+    onConfirm = ( date ) => {
+    // You should close the modal in here
+    setShowDatePicker(false)
+    onChangeText5(date.toString().split(" 00:00", 1).toString())
+    // The parameter 'date' is a Date object so that you can use any Date prototype method.
+    console.log(date.getDate())
+
+  }
    //use API
    async componentDidMount(){
     //get patient from API
@@ -118,7 +137,8 @@ class AddPatientRecords extends Component{
     <View style={[GlobalStyles.contentflex , {flex: 6 }]} >
     <View style={{flex: 0.8, flexDirection: 'row' }}>
         <Text style={[GlobalStyles.titleText]}>Date / Time:      </Text>
-        <TextInput style={GlobalStyles.textInputStyles} onChangeText={(text)=> {this.setState({dateTime: text});}}/>
+        <TextInput style={GlobalStyles.textInputStyles}   placeholder="YYYY/MM/DD" onChangeText={(text)=> {this.setState({dateTime: text});}}/>
+
       </View>
       <View style={{flex: 0.8, flexDirection: 'row' }}>
         <Text style={[GlobalStyles.titleText]}>Nurse Name:    </Text>
@@ -132,17 +152,24 @@ class AddPatientRecords extends Component{
         <Text style={[GlobalStyles.titleText]}>Reading/Value:</Text>
         <TextInput style={GlobalStyles.textInputStyles} onChangeText={(text)=> {this.setState({singleValue: text});}}/>
       </View>
+
       <View style={{flex: 0.8, flexDirection: 'row' }}>
-        <Text style={[GlobalStyles.titleText]}>Type Of Data:   </Text>
-        <TextInput style={GlobalStyles.textInputStyles} onChangeText={(text)=> {this.setState({category: text});}}/>
-      </View>
+        <Text style={[GlobalStyles.titleText  ]}>Type Of Data</Text>
+
+        <Picker
+            style={GlobalStyles.picker}
+            selectedValue={this.state.category}
+            onValueChange={(text)=> {this.setState({category: text});}}>
+          <Picker.Item style={GlobalStyles.pickerItem} label="Blood Pressure (X/Y mmHg) "      value="Blood Pressure" />
+          <Picker.Item style={GlobalStyles.pickerItem} label="Respiratory Rate (X/min)" value="Respiratory Rate" />
+          <Picker.Item style={GlobalStyles.pickerItem} label="Blood Oxygen Level (X%)" value="Blood Oxygen Level" />
+            <Picker.Item style={GlobalStyles.pickerItem} label="Heartbeat Rate (X/min)" value="Heart Beat Rate" />
+        </Picker>
+    </View>
+
+
       <View style={{flex: 1.7, flexDirection: 'column',alignSelf: 'center'}}>
-    
-          <Text style = {GlobalStyles.titleText}>Available types: </Text>
-          <Text>Blood Pressure</Text>
-          <Text>Respiratory Rate</Text>
-          <Text>Blood Oxygen Level</Text>
-          <Text>Heartbeat Rate</Text>
+
 
       </View>
       <View style={{flex: 1 , flexDirection: 'row' }}>
