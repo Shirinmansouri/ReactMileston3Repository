@@ -42,7 +42,6 @@ class AddPatientRecords extends Component{
     onConfirm = ( date ) => {
     // You should close the modal in here
     setShowDatePicker(false)
-    onChangeText5(date.toString().split(" 00:00", 1).toString())
     // The parameter 'date' is a Date object so that you can use any Date prototype method.
     console.log(date.getDate())
 
