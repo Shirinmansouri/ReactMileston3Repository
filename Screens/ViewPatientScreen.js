@@ -71,7 +71,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
               <Button style={GlobalStyles.recordRow} title="Add" onPress={()=>{
                     this.props.navigation.navigate('Add Patient Record',
                     {
-                        patientId: '619dd6f360ac90f3ca548a3b',
+                        patientId: '61a128da71232b9fb3b61ff7',
                         otherParam: 'anything you want here',
                         });
                     }}
@@ -80,7 +80,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
           <DataTable.Cell style={{flex: 2}} numeric>
               <Button style={GlobalStyles.recordRow} title="List" onPress={()=>{
                     this.props.navigation.navigate('View Patient Record', {
-                        patientId: '619dd6f360ac90f3ca548a3b',
+                        patientId: '61a128da71232b9fb3b61ff7',
                         otherParam: 'anything you want here',
                         });
                     }}

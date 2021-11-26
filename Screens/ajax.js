@@ -1,8 +1,11 @@
 export default {
+
      async fetchPatientRecords(id){
+      const URL = 'https://patient-mobile-application.herokuapp.com'
     try {
       const response = await fetch(
-        'http://127.0.0.1:5000/patients/' + id + '/tests'
+       // 'http://127.0.0.1:5000/patients/' + id + '/tests'
+       URL + '/patients/' + id + '/tests'
       );
       const json = await response.json();
       return json;
@@ -11,9 +14,11 @@ export default {
     }
   },
   async fetchPatients(){
+    const URL = 'https://patient-mobile-application.herokuapp.com'
   try {
    const response = await fetch(
-'http://127.0.0.1:5000/patients'
+    //'http://127.0.0.1:5000/patients'
+    URL + '/patients'
    );
    const json = await response.json();
    return json;
@@ -22,9 +27,10 @@ export default {
   }
   },
   async fetchPatientbyId(id){
+    const URL = 'https://patient-mobile-application.herokuapp.com'
     try {
       const response = await fetch(
-        'http://127.0.0.1:5000/patients/' + id
+        URL + '/patients/' + id
       );
       const json = await response.json();
       return json;

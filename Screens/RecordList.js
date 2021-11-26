@@ -20,17 +20,7 @@ class RecordList extends React.Component{
                     </DataTable.Header>
                 </DataTable>
 
-                <FlatList ItemSeparatorComponent={
-                      Platform.OS !== 'android' &&
-                      (({ highlighted }) => (
-                        <View
-                          style={[
-                            style.separator,
-                            highlighted && { marginLeft: 0 }
-                          ]}
-                        />
-                      ))
-                    }
+                <FlatList 
                 data={this.props.records}
                 renderItem={({item}) =>
                 <View style= {{flex : 5 , flexDirection : 'row' }}>
