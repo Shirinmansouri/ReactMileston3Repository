@@ -17,12 +17,8 @@ export default {
     const URL = 'https://patient-mobile-application.herokuapp.com'
   try {
    const response = await fetch(
-<<<<<<< HEAD
-   'https://patient-mobile-application.herokuapp.com/patients'
-=======
     //'http://127.0.0.1:5000/patients'
     URL + '/patients'
->>>>>>> de7e958285ef48d47006d048017461a2e416de28
    );
    const json = await response.json();
    return json;
