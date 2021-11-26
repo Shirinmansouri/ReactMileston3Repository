@@ -13,7 +13,7 @@ export default {
   async fetchPatients(){
   try {
    const response = await fetch(
-   'http://127.0.0.1:5000/patients'
+   'https://patient-mobile-application.herokuapp.com/patients'
    );
    const json = await response.json();
    return json;
