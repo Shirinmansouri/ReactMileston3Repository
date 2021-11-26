@@ -58,8 +58,8 @@ const AddNewPatient = ({navigation, route})=>{
       })
     };
     try{
-
-      const response = await fetch('http://127.0.0.1:5000/patients', requestOptions).catch(err => console.log(err));
+      const URL = 'https://patient-mobile-application.herokuapp.com'
+      const response = await fetch( URL + '/patients', requestOptions).catch(err => console.log(err));
       // console.log(response._bodyBlob)
       // console.log(response)
       // const data = await response.json();
@@ -134,10 +134,10 @@ const AddNewPatient = ({navigation, route})=>{
 
 
   <View style={[GlobalStyles.textButtonRowContainer]}>
-    <Text>servicePlan:        </Text>
+    <Text>HealthID:             </Text>
   <TextInput
   style={[GlobalStyles.textInputContainer]}
-  placeholder="Enter service plan"
+  placeholder="Enter HealthID"
   placeholderTextColor="gray"
   onChangeText={text => onChangeText7(text)}
   value={servicePlan}
