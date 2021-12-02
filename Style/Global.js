@@ -21,7 +21,23 @@ export const GlobalStyles=StyleSheet.create({
    height: 45,
    margin: 10,
   },
+  appButtonContainerTwo: {
+    elevation: 1,
+    backgroundColor: "#60839C",
+    borderRadius: 10,
+    paddingVertical: 10,
+   marginHorizontal: 20,
+   height: 45,
+   margin: 10,
+  },
   appButtonText: {
+    fontSize: 15,
+    color: "#fff",
+    fontWeight: "bold",
+    alignSelf: "center",
+    textTransform: "uppercase"
+  },
+  appButtonTextTwo: {
     fontSize: 15,
     color: "#fff",
     fontWeight: "bold",
