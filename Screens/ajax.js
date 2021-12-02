@@ -27,7 +27,7 @@ export default {
   }
   },
   async fetchPatientsBySearch(servicePlan, firstName, lastName){
-    const URL = 'http://127.0.0.1:5000/patients'
+    const URL = 'http://127.0.0.1:5000'
     if ((servicePlan === '')&&(firstName === '')&&(lastName === '')){
       alert("At least one search field has to be filled out!")
     }else{
