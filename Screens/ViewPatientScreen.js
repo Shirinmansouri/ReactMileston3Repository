@@ -27,8 +27,8 @@ import SearchResult from './SearchResult';
   }
 
   async searchForPatient(){
-    
-    const result = await ajax.gohKhordam(this.props.servicePlan, this.props.firstName, this.props.lastName)
+    alert("xes")
+    const result = await ajax.fetchPatientsBySearch(this.props.servicePlan, this.props.firstName, this.props.lastName)
     this.setState({results:result});
    }
 
@@ -41,19 +41,19 @@ import SearchResult from './SearchResult';
        <View style={{flex: 1, flexDirection: 'row' }}>
        <Text style={[GlobalStyles.titleText, {flex: 1 ,flexDirection:'column' }]}>First Name</Text>
        <TextInput
-         style={GlobalStyles.textInputStyles} onChangeText={text => updateFirstName(text)}
+         style={GlobalStyles.textInputStyles} onChangeText={text => this.updateFirstName(text)}
        />
       </View>
       <View style={{flex: 1, flexDirection: 'row' }}>
     <Text style={[GlobalStyles.titleText, {flex: 1 ,flexDirection:'column' }]}>Last Name:</Text>
     <TextInput
-         style={GlobalStyles.textInputStyles} onChangeText={text => updateLastName(text)}
+         style={GlobalStyles.textInputStyles} onChangeText={text => this.updateLastName(text)}
        />
      </View>
      <View style={{flex: 1, flexDirection: 'row' }}>
      <Text style={[GlobalStyles.titleText, {flex: 1 ,flexDirection:'column' }]}>Health Id:</Text>
      <TextInput
-         style={GlobalStyles.textInputStyles} onChangeText={text => updateServicePlan(text)}
+         style={GlobalStyles.textInputStyles} onChangeText={text => this.updateServicePlan(text)}
        />
     </View>
     <View style={{flex: 1 , flexDirection: 'row' }}>

@@ -26,7 +26,7 @@ export default {
    console.error(error);
   }
   },
-  async gohKhordam(servicePlan, firstName, lastName){
+  async fetchPatientsBySearch(servicePlan, firstName, lastName){
     const URL = 'http://127.0.0.1:5000/patients'
   try {
    const response = await fetch(
