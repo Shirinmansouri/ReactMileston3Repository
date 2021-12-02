@@ -28,7 +28,7 @@ import ajax from './ajax';
   }
 
   async searchForPatient(){
-    if ((servicePlan === '')&&(firstName === '')&&(lastName === '')){
+    if ((this.state.servicePlan === '')&&(this.state.firstName === '')&&(this.state.lastName === '')){
       alert("At least one search field has to be filled out!")
     }else{
     const result = await ajax.fetchPatientsBySearch(this.state.servicePlan, this.state.firstName, this.state.lastName)
