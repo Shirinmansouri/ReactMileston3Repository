@@ -58,7 +58,7 @@ import SearchResult from './SearchResult';
     </View>
     <View style={{flex: 1 , flexDirection: 'row' }}>
     <TouchableHighlight
-       style = {[GlobalStyles.appButtonContainer ,  {flex: 1 ,flexDirection:'column' }]} onPress={this.searchForPatient}>
+       style = {[GlobalStyles.appButtonContainer ,  {flex: 1 ,flexDirection:'column' }]} onPress={this.searchForPatient()}>
        <Text style = {GlobalStyles.appButtonText}>Find</Text>
     </TouchableHighlight>
     </View>
