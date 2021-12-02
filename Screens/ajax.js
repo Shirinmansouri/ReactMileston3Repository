@@ -26,6 +26,20 @@ export default {
    console.error(error);
   }
   },
+  '/patientsbyhealthid/:servicePlan/:firstName/:lastName'
+  async gohKhordam(){
+    const URL = 'http://127.0.0.1:5000/patients'
+  try {
+   const response = await fetch(
+    //'https://patient-mobile-application.herokuapp.com'
+    URL + '/patients'
+   );
+   const json = await response.json();
+   return json;
+  } catch (error) {
+   console.error(error);
+  }
+  },
   async fetchPatientbyId(id){
     const URL = 'https://patient-mobile-application.herokuapp.com'
     try {
