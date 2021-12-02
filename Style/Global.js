@@ -24,10 +24,10 @@ export const GlobalStyles=StyleSheet.create({
   appButtonContainerTwo: {
     elevation: 1,
     backgroundColor: "#60839C",
-    borderRadius: 10,
-    paddingVertical: 10,
-   marginHorizontal: 20,
-   height: 45,
+    borderRadius: 2,
+    paddingVertical: 0,
+   marginHorizontal: 10,
+   height: 15,
    margin: 10,
   },
   appButtonText: {
@@ -38,7 +38,7 @@ export const GlobalStyles=StyleSheet.create({
     textTransform: "uppercase"
   },
   appButtonTextTwo: {
-    fontSize: 15,
+    fontSize: 10,
     color: "#fff",
     fontWeight: "bold",
     alignSelf: "center",
