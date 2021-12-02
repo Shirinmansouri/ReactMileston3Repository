@@ -28,19 +28,19 @@ export default {
   },
   async fetchPatientsBySearch(servicePlan, firstName, lastName){
     const URL = 'http://127.0.0.1:5000'
+  try {
     if ((servicePlan === '')&&(firstName === '')&&(lastName === '')){
       alert("At least one search field has to be filled out!")
     }else{
-  try {
    const response = await fetch(
     //'https://patient-mobile-application.herokuapp.com'
     URL + '/patientsbyhealthid' + '/' + servicePlan + '/' + firstName + '/' + lastName
    );
    const json = await response.json();
    return json;
+    }
   } catch (error) {
    console.error(error);
-  }
   }
 },
   async fetchPatientbyId(id){
