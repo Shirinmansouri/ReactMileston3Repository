@@ -17,13 +17,13 @@ import SearchResult from './SearchResult';
     lastName: '',
   }
   updateServicePlan=(text)=>{
-    servicePlan : text
+    this.setState({servicePlan:text});
   }
   updateFirstName=(text)=>{
-    firstName : text
+    this.setState({firstName:text});
   }
   updateLastName=(text)=>{
-    lastName : text
+    this.setState({lastName:text});
   }
 
   async searchForPatient(){
