@@ -12,9 +12,21 @@ import SearchResult from './SearchResult';
    }
    state={
     results: [],
+    servicePlan: '',
+    firstName: '',
+    lastName: '',
+  }
+  updateServicePlan=(text)=>{
+    servicePlan : text
+  }
+  updateFirstName=(text)=>{
+    firstName : text
+  }
+  updateLastName=(text)=>{
+    lastName : text
   }
 
-  async searchForPatient(servicePlan, firstName, lastName){
+  async searchForPatient(){
     
     const result = await ajax.gohKhordam(servicePlan, firstName, lastName)
     this.setState({results:result});
@@ -41,12 +53,12 @@ import SearchResult from './SearchResult';
      <View style={{flex: 1, flexDirection: 'row' }}>
      <Text style={[GlobalStyles.titleText, {flex: 1 ,flexDirection:'column' }]}>Health Id:</Text>
      <TextInput
-         style={GlobalStyles.textInputStyles}
+         style={GlobalStyles.textInputStyles} onChangeText={text => updateServicePlan(text)
        />
     </View>
     <View style={{flex: 1 , flexDirection: 'row' }}>
     <TouchableHighlight
-       style = {[GlobalStyles.appButtonContainer ,  {flex: 1 ,flexDirection:'column' }]}>
+       style = {[GlobalStyles.appButtonContainer ,  {flex: 1 ,flexDirection:'column' }]} onPress={searchForPatient}>
        <Text style = {GlobalStyles.appButtonText}>Find</Text>
     </TouchableHighlight>
     </View>
