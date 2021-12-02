@@ -5,6 +5,7 @@ import { DataTable } from 'react-native-paper';
 import { Table, Row} from 'react-native-table-component';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import SearchResult from './SearchResult';
+import ajax from './ajax';
 
  class ViewPatientsScreen extends Component {
    constructor(props){
@@ -57,7 +58,7 @@ import SearchResult from './SearchResult';
     </View>
     <View style={{flex: 1 , flexDirection: 'row' }}>
     <TouchableHighlight
-       style = {[GlobalStyles.appButtonContainer ,  {flex: 1 ,flexDirection:'column' }]} onPress={()=>this.searchForPatient}>
+       style = {[GlobalStyles.appButtonContainer ,  {flex: 1 ,flexDirection:'column' }]} onPress={()=>this.searchForPatient()}>
        <Text style = {GlobalStyles.appButtonText}>Find</Text>
     </TouchableHighlight>
     </View>
