@@ -24,7 +24,7 @@ export const GlobalStyles=StyleSheet.create({
   appButtonContainerTwo: {
     elevation: 1,
     backgroundColor: "#60839C",
-    borderRadius: 2,
+    borderRadius: 3,
     paddingVertical: 0,
    marginHorizontal: 10,
    height: 15,
