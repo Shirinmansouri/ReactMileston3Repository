@@ -4,11 +4,15 @@ import {GlobalStyles} from '../Style/Global';
 import { DataTable } from 'react-native-paper';
 import { Table, Row} from 'react-native-table-component';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import SearchResult from './SearchResult';
 
  class ViewPatientsScreen extends Component {
    constructor(props){
      super(props);
    }
+   state={
+    results: [],
+  }
    render(){
      return (
       <View style={GlobalStyles.container}>
@@ -44,12 +48,12 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
     <View style={[GlobalStyles.patientData , {backgroundColor: '#ABD3EC' }]}>
        {
-         this.state.patients.length > 0
-         ? <PatientList patients={this.state.patients}/>
+         this.state.results.length > 0
+         ? <SearchResult results={this.state.results}/>
          : <Text style={styles.header}>No records available!</Text>
        }
    </View>
-   
+
     </View>
 
     </View>
