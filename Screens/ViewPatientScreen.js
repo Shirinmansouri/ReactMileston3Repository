@@ -30,6 +30,7 @@ import ajax from './ajax';
   async searchForPatient(){
     const result = await ajax.fetchPatientsBySearch(this.state.servicePlan, this.state.firstName, this.state.lastName)
     this.setState({results:result});
+    alert(this.state.results.length)
    }
 
    render(){
@@ -69,7 +70,7 @@ import ajax from './ajax';
        {
          this.state.results.length > 0
          ? <SearchResult results={this.state.results}/>
-         : <Text>No records available!</Text>
+         : ((this.state.servicePlan === '')&&(this.state.firstName === '')&&(this.state.lastName === '')) ? <Text>No Search Yet!</Text> : <Text>No Records Found!</Text>
        }
    </View>
 
