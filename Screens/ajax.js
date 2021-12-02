@@ -26,13 +26,12 @@ export default {
    console.error(error);
   }
   },
-  '/patientsbyhealthid/:servicePlan/:firstName/:lastName'
-  async gohKhordam(){
+  async gohKhordam(servicePlan, firstName, lastName){
     const URL = 'http://127.0.0.1:5000/patients'
   try {
    const response = await fetch(
     //'https://patient-mobile-application.herokuapp.com'
-    URL + '/patients'
+    URL + '/patientsbyhealthid' + '/' + servicePlan + '/' + firstName + '/' + lastName
    );
    const json = await response.json();
    return json;
