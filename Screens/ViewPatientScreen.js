@@ -13,6 +13,13 @@ import SearchResult from './SearchResult';
    state={
     results: [],
   }
+
+  async searchForPatient(servicePlan, firstName, lastName){
+    
+    const result = await ajax.gohKhordam(servicePlan, firstName, lastName)
+    this.setState({results:result});
+   }
+
    render(){
      return (
       <View style={GlobalStyles.container}>
