@@ -28,7 +28,7 @@ import SearchResult from './SearchResult';
 
   async searchForPatient(){
     
-    const result = await ajax.gohKhordam(servicePlan, firstName, lastName)
+    const result = await ajax.gohKhordam(this.props.servicePlan, this.props.firstName, this.props.lastName)
     this.setState({results:result});
    }
 
