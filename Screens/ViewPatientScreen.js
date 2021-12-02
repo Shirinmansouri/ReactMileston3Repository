@@ -28,9 +28,12 @@ import ajax from './ajax';
   }
 
   async searchForPatient(){
+    if ((servicePlan === '')&&(firstName === '')&&(lastName === '')){
+      alert("At least one search field has to be filled out!")
+    }else{
     const result = await ajax.fetchPatientsBySearch(this.state.servicePlan, this.state.firstName, this.state.lastName)
     this.setState({results:result});
-    alert(this.state.results.length)
+    }
    }
 
    render(){
