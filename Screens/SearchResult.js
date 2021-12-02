@@ -3,15 +3,8 @@ import PropTypes from 'prop-types';
 import Moment from 'moment';
 import { DataTable } from 'react-native-paper';
 import {GlobalStyles} from '../Style/Global';
-import {NavigationContainer} from '@react-navigation/native'
-import { navigation } from '@react-navigation/core';
 import {View, Text, StyleSheet, FlatList,Button,TouchableOpacity,TouchableHighlight} from 'react-native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import ViewPatientRecordsScreen from './ViewPatientRecordsScreen'
-import  HomeScreen from './HomeScreen';
-import AddPatientRecords from './AddPatientRecords';
-import { withNavigation } from 'react-navigation';
-import { useNavigation } from '@react-navigation/native';
+
 
 
 class SearchResult extends Component{
