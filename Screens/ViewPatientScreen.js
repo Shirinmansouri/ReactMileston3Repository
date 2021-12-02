@@ -69,7 +69,7 @@ import SearchResult from './SearchResult';
        {
          this.state.results.length > 0
          ? <SearchResult results={this.state.results}/>
-         : <Text style={styles.header}>No records available!</Text>
+         : <Text>No records available!</Text>
        }
    </View>
 
