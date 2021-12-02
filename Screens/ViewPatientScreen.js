@@ -41,19 +41,19 @@ import SearchResult from './SearchResult';
        <View style={{flex: 1, flexDirection: 'row' }}>
        <Text style={[GlobalStyles.titleText, {flex: 1 ,flexDirection:'column' }]}>First Name</Text>
        <TextInput
-         style={GlobalStyles.textInputStyles}
+         style={GlobalStyles.textInputStyles} onChangeText={text => updateFirstName(text)} value={firstName}
        />
       </View>
       <View style={{flex: 1, flexDirection: 'row' }}>
     <Text style={[GlobalStyles.titleText, {flex: 1 ,flexDirection:'column' }]}>Last Name:</Text>
     <TextInput
-         style={GlobalStyles.textInputStyles}
+         style={GlobalStyles.textInputStyles} onChangeText={text => updateLastName(text)} value={lastName}
        />
      </View>
      <View style={{flex: 1, flexDirection: 'row' }}>
      <Text style={[GlobalStyles.titleText, {flex: 1 ,flexDirection:'column' }]}>Health Id:</Text>
      <TextInput
-         style={GlobalStyles.textInputStyles} onChangeText={text => updateServicePlan(text)
+         style={GlobalStyles.textInputStyles} onChangeText={text => updateServicePlan(text)} value={servicePlan}
        />
     </View>
     <View style={{flex: 1 , flexDirection: 'row' }}>
