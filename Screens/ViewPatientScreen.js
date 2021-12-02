@@ -27,7 +27,6 @@ import SearchResult from './SearchResult';
   }
 
   async searchForPatient(){
-    alert("xes")
     const result = await ajax.fetchPatientsBySearch(this.props.servicePlan, this.props.firstName, this.props.lastName)
     this.setState({results:result});
    }
