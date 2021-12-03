@@ -1,28 +1,24 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Moment from 'moment';
 import { DataTable } from 'react-native-paper';
 import {GlobalStyles} from '../Style/Global';
-import {View, Text, StyleSheet, FlatList,Button,TouchableOpacity,TouchableHighlight} from 'react-native';
+import {View, Text, FlatList, TouchableHighlight} from 'react-native';
 
-
-
-class SearchResult extends Component{
+class SearchResult extends React.Component{
     constructor(props){
         super(props);
-      }
+      };
     static propTypes ={
         results: PropTypes.array.isRequired,
+        stateProps: PropTypes.object.isRequired,
     };
     
-
-    addRecords () {
-        alert("In Add")
-        try{
-            
-            this.props.navigation.navigate('Add Patient Record',
-            {
-                patientId: '61a128da71232b9fb3b61ff7',
+    addRecords = (itemPatientId) => {
+        //alert("In Add")
+        try{    
+            this.props.stateProps.navigation.navigate('Add Patient Record',
+            { 
+                patientId: itemPatientId,
                 otherParam: 'anything you want here',
             });
                 
@@ -31,16 +27,19 @@ class SearchResult extends Component{
         }
     }
 
-    listRecords () {
-        alert("In List")
+    listRecords = (itemPatientId) => {
+        //alert("In List")
         try{
-            
+            this.props.stateProps.navigation.navigate('View Patient Record',
+            {
+                patientId: itemPatientId,
+                otherParam: 'anything you want here',
+            });
             
         } catch(error){
             console.error(error);
         }
     }  
-
         
     render(){
 
@@ -58,8 +57,6 @@ class SearchResult extends Component{
                     </DataTable.Header>
                 </DataTable>
 
-                
-
                 <FlatList
                 data={this.props.results}
                 renderItem={({item}) =>
@@ -76,15 +73,13 @@ class SearchResult extends Component{
                     {item.servicePlan}
                     </Text>
                     <TouchableHighlight
-                           style = {[GlobalStyles.appButtonContainerTwo ,  {flex: 2 ,flexDirection:'column' }]} title="Add" onPress={()=>this.addRecords()}>
+                           style = {[GlobalStyles.appButtonContainerTwo ,  {flex: 2 ,flexDirection:'column' }]} title="Add" onPress={()=>this.addRecords(item._id)}>
                         <Text style = {GlobalStyles.appButtonTextTwo}>Add</Text>
                     </TouchableHighlight>
                     <TouchableHighlight
-                           style = {[GlobalStyles.appButtonContainerTwo ,  {flex: 2 ,flexDirection:'column' }]} onPress={()=>this.listRecords()}>
+                           style = {[GlobalStyles.appButtonContainerTwo ,  {flex: 2 ,flexDirection:'column' }]} title="List" onPress={()=>this.listRecords(item._id)}>
                         <Text style = {GlobalStyles.appButtonTextTwo}>List</Text>
                     </TouchableHighlight>
-
-
                 </View>}
                 />
                 

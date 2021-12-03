@@ -17,6 +17,7 @@ import ajax from './ajax';
     firstName: '',
     lastName: '',
   }
+
   updateServicePlan=(text)=>{
     this.setState({servicePlan:text});
   }
@@ -72,7 +73,7 @@ import ajax from './ajax';
     <View style={[GlobalStyles.patientData , {backgroundColor: '#ABD3EC' }]}>
        {
          this.state.results.length > 0
-         ? <SearchResult results={this.state.results}/>
+         ? <SearchResult results={this.state.results} stateProps={this.props} />
          : ((this.state.servicePlan === '')&&(this.state.firstName === '')&&(this.state.lastName === '')) ? <Text>No Search Yet!</Text> : <Text>No Records Found!</Text>
        }
    </View>
