@@ -96,8 +96,13 @@ class AddPatientRecords extends Component{
    try{
 
     const response = await fetch('https://patient-mobile-application.herokuapp.com/patients/'+ this.props.route.params.patientId +"/tests", requestOptions).catch(err => console.log(err));
-
     alert("New patient record has been added");
+
+    // console.log(response._bodyBlob)
+    // console.log(response)
+    // const data = await response.json();
+    // console.log(data)
+
   } catch (error) {
     console.error(error);
   }
