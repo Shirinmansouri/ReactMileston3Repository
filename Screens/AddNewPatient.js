@@ -1,13 +1,7 @@
-import React, { Component } from 'react'
-import { StyleSheet,TextInput,View, Text, TouchableHighlight,Button,Alert,TouchableOpacity} from 'react-native'
+import React from 'react'
+import {TextInput,View, Text, Alert,TouchableOpacity} from 'react-native'
 import {GlobalStyles} from '../Style/Global';
-import ViewPatientScreen from '../Screens/ViewPatientScreen';
-
-
 import {useState} from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-// import {createNativeStackNavigator} from 'react-navigation/native-stack';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import DatePicker from 'react-native-neat-date-picker'
 
 
@@ -21,6 +15,7 @@ const AddNewPatient = ({navigation, route})=>{
   var [address, onChangeText6] = React.useState('');
   var [servicePlan, onChangeText7] = React.useState('');
   var [phone, onChangeText8] = React.useState('');
+
   const clearAll = () => {
     onChangeText('');
     onChangeText2('');
@@ -33,14 +28,51 @@ const AddNewPatient = ({navigation, route})=>{
   }
   const cancelAll = () => {
     clearAll();
-    alert("Canceled");
+    alert("Cancelled");
   }
 
   const [showDatePicker, setShowDatePicker] = useState(false)
 
+  const addPatient = async () => {
 
-  const addPatinet = async () => {
-
+    //start input validation
+    if (firstName.trim().length == 0) {
+      Alert.alert('Error', 'First Name is mandatory');
+      return;
+    }
+    if (lastName.trim().length == 0) {
+      Alert.alert('Error', 'Last Name is mandatory');
+      return;
+    }
+    if (doctor.trim().length == 0) {
+      Alert.alert('Error', 'Doctor is mandatory');
+      return;
+    }
+    if (department.trim().length == 0) {
+      Alert.alert('Error', 'Department is mandatory');
+      return;
+    }
+    if (dateOfBirth.trim().length == 0) {
+      Alert.alert('Error', 'Date of Birth is mandatory');
+      return;
+    }
+    if (address.trim().length == 0) {
+      Alert.alert('Error', 'Address is mandatory');
+      return;
+    }
+    if (servicePlan.trim().length == 0) {
+      Alert.alert('Error', 'Service Plan is mandatory');
+      return;
+    }
+    if (phone.trim().length == 0) {
+      Alert.alert('Error', 'Phone is mandatory');
+      return;
+    }
+    if (isNaN(phone.trim())) {
+      Alert.alert('Error', 'Phone must be a number');
+      return;
+    }
+    //end input validation
 
     // POST request using fetch with async/await
     const requestOptions = {
@@ -201,7 +233,7 @@ const AddNewPatient = ({navigation, route})=>{
   <View style={{flex: 1 , flexDirection: 'row' }}>
 <View style={[GlobalStyles.appButtonContainer ,  {flex: 1 ,flexDirection:'column' }]}>
 <TouchableOpacity
-  onPress={addPatinet}
+  onPress={addPatient}
     >
     <Text style = {GlobalStyles.appButtonText}>Add</Text>
     </TouchableOpacity>
