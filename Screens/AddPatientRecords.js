@@ -71,7 +71,7 @@ class AddPatientRecords extends Component{
 
    try{
 
-    const response = await fetch('http://127.0.0.1:5000/patients/'+ this.props.route.params.patientId +"/tests", requestOptions).catch(err => console.log(err));
+    const response = await fetch('https://patient-mobile-application.herokuapp.com/patients/'+ this.props.route.params.patientId +"/tests", requestOptions).catch(err => console.log(err));
     // console.log(response._bodyBlob)
     // console.log(response)
     // const data = await response.json();

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { StyleSheet,TextInput,View, Text, SafeAreaView, TouchableHighlight,Button,Alert,TouchableOpacity} from 'react-native'
+
 import {GlobalStyles} from '../Style/Global';
 import { DataTable } from 'react-native-paper';
 import { Table, Row} from 'react-native-table-component';
