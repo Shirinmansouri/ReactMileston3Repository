@@ -49,10 +49,10 @@ class SearchResult extends React.Component{
                     <DataTable.Header >
                     
                     <DataTable.Title style={{flex: 3}}>Name</DataTable.Title>
-                    <DataTable.Title style={{flex: 4}}>Date of Birth</DataTable.Title>
+                    <DataTable.Title style={{flex: 5}}>Date of Birth</DataTable.Title>
                     <DataTable.Title style={{flex: 3}}>HealthID</DataTable.Title>
-                    <DataTable.Title style={{flex: 2}}></DataTable.Title>
-                    <DataTable.Title style={{flex: 2}}></DataTable.Title>
+                    <DataTable.Title style={{flex: 1}}></DataTable.Title>
+                    <DataTable.Title style={{flex: 3}}>Records</DataTable.Title>
                     
                     </DataTable.Header>
                 </DataTable>

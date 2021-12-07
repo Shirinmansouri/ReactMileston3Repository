@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
-import { StyleSheet,TextInput,View, Text, TouchableHighlight, FlatList ,Button,TouchableOpacity} from 'react-native'
+import {TextInput,View, Text, TouchableHighlight, Alert} from 'react-native'
 import {Picker} from '@react-native-picker/picker'
-import DatePicker from 'react-native-neat-date-picker'
 import {GlobalStyles} from '../Style/Global';
-import DropDownPicker from 'react-native-dropdown-picker';
 import { Table, Row} from 'react-native-table-component';
 import ajax from './ajax';
 import { any } from 'prop-types';
@@ -55,6 +53,32 @@ class AddPatientRecords extends Component{
    }
 
   addPatientRecord = async () => {
+
+    //start input validation
+    if (this.state.dateTime.trim().length == 0) {
+      Alert.alert('Error', 'Date/Time is mandatory');
+      return;
+    }
+    if (this.state.nurseName.trim().length == 0) {
+      Alert.alert('Error', 'Nurse Name is mandatory');
+      return;
+    }
+    if (this.state.type.trim().length == 0) {
+      Alert.alert('Error', 'Type is mandatory');
+      return;
+    }
+    if (this.state.type.trim() != "Hourly" && this.state.type.trim() != "Daily" &&
+       this.state.type.trim() != "Weekly" && this.state.type.trim() != "Monthly") {
+      Alert.alert('Error', 'Type can be: (Hourly/Daily/Weekly/Monthly)');
+      return;
+    }
+    if (this.state.singleValue.trim().length == 0) {
+      Alert.alert('Error', 'Reading/Value is mandatory');
+      return;
+    }
+    //end input validation
+
+
       // POST request using fetch with async/await
     //for non
     const requestOptions = {
@@ -71,11 +95,9 @@ class AddPatientRecords extends Component{
 
    try{
 
-    const response = await fetch('http://127.0.0.1:5000/patients/'+ this.props.route.params.patientId +"/tests", requestOptions).catch(err => console.log(err));
-    // console.log(response._bodyBlob)
-    // console.log(response)
-    // const data = await response.json();
-    // console.log(data)
+    const response = await fetch('https://patient-mobile-application.herokuapp.com/patients/'+ this.props.route.params.patientId +"/tests", requestOptions).catch(err => console.log(err));
+
+    alert("New patient record has been added");
   } catch (error) {
     console.error(error);
   }

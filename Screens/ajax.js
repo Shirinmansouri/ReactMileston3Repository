@@ -27,7 +27,8 @@ export default {
   }
   },
   async fetchPatientsBySearch(servicePlan, firstName, lastName){
-    const URL = 'http://127.0.0.1:5000'
+    //const URL = 'http://127.0.0.1:5000'
+   const URL =  'https://patient-mobile-application.herokuapp.com'
   try {
    const response = await fetch(
     //'https://patient-mobile-application.herokuapp.com'
