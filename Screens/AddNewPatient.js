@@ -132,6 +132,11 @@ const AddNewPatient = ({navigation, route})=>{
   onChangeText={text => onChangeText(text)}
   value={firstName}
   />
+   <View style={{width:"12%",
+    height:15,
+    alignItems:"center",
+    justifyContent:"center",
+    margin: 5}}></View>
   </View>
   <View style={[GlobalStyles.textButtonRowContainer]}>
     <Text>Last Name:        </Text>
@@ -142,6 +147,11 @@ const AddNewPatient = ({navigation, route})=>{
   onChangeText={text => onChangeText2(text)}
   value={lastName}
   />
+   <View style={{width:"12%",
+    height:15,
+    alignItems:"center",
+    justifyContent:"center",
+    margin: 5}}></View>
   </View>
   <View style={[GlobalStyles.textButtonRowContainer]}>
     <Text>Doctor:               </Text>
@@ -152,6 +162,11 @@ const AddNewPatient = ({navigation, route})=>{
   onChangeText={text => onChangeText3(text)}
   value={doctor}
   />
+   <View style={{width:"12%",
+    height:15,
+    alignItems:"center",
+    justifyContent:"center",
+    margin: 5}}></View>
   </View>
   <View style={[GlobalStyles.textButtonRowContainer]}>
     <Text>Department:       </Text>
@@ -162,11 +177,16 @@ const AddNewPatient = ({navigation, route})=>{
   onChangeText={text => onChangeText4(text)}
   value={department}
   />
+   <View style={{width:"12%",
+    height:15,
+    alignItems:"center",
+    justifyContent:"center",
+    margin: 5}}></View>
   </View>
 
 
   <View style={[GlobalStyles.textButtonRowContainer]}>
-    <Text>HealthID:             </Text>
+    <Text>HealthID:            </Text>
   <TextInput
   style={[GlobalStyles.textInputContainer]}
   placeholder="Enter HealthID"
@@ -174,10 +194,15 @@ const AddNewPatient = ({navigation, route})=>{
   onChangeText={text => onChangeText7(text)}
   value={servicePlan}
   />
+  <View style={{width:"12%",
+    height:15,
+    alignItems:"center",
+    justifyContent:"center",
+    margin: 5}}></View>
   </View>
 
   <View style={[GlobalStyles.textButtonRowContainer]}>
-    <Text>Date of Birth:    </Text>
+    <Text>Date of Birth:     </Text>
   <TextInput
   style={[GlobalStyles.textInputContainer]}
   placeholder="             /            /            "
@@ -208,7 +233,7 @@ const AddNewPatient = ({navigation, route})=>{
   </View>
   </View>
   <View style={[GlobalStyles.textButtonRowContainer]}>
-    <Text>Address:              </Text>
+    <Text>Address:            </Text>
   <TextInput
   style={[GlobalStyles.textInputContainer]}
   placeholder="Enter your address"
@@ -216,10 +241,15 @@ const AddNewPatient = ({navigation, route})=>{
   onChangeText={text => onChangeText6(text)}
   value={address}
   />
+   <View style={{width:"12%",
+    height:15,
+    alignItems:"center",
+    justifyContent:"center",
+    margin: 5}}></View>
   </View>
 
   <View style={[GlobalStyles.textButtonRowContainer]}>
-    <Text>Phone:                 </Text>
+    <Text>Phone:                </Text>
   <TextInput
   style={[GlobalStyles.textInputContainer]}
   placeholder="Enter your phone"
@@ -227,6 +257,11 @@ const AddNewPatient = ({navigation, route})=>{
   onChangeText={text => onChangeText8(text)}
   value={phone}
   />
+   <View style={{width:"12%",
+    height:15,
+    alignItems:"center",
+    justifyContent:"center",
+    margin: 5}}></View>
   </View>
 
 
