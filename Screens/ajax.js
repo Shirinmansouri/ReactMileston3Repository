@@ -32,7 +32,7 @@ export default {
   try {
    const response = await fetch(
     //'https://patient-mobile-application.herokuapp.com'
-    URL + '/patientsbyhealthid' + '/' + servicePlan + '/' + firstName + '/' + lastName
+    URL + '/patients' + '/' + servicePlan + '/' + firstName + '/' + lastName
    );
    const json = await response.json();
    return json;
